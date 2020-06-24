@@ -84,7 +84,7 @@ export default {
                     type: product_by_id_data.status
                 })
                 if (Array.isArray(product_by_id_data.data) && product_by_id_data.data.length > 0) {
-                    router.push(`/update/${product_by_id_data.data[0].id}`)
+                    router.push(`/update/`)
                 } else {
                     router.push(`/create/`)
                 }

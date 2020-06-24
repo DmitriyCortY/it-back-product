@@ -15,7 +15,7 @@ const routes = [{
                     import ('../components/ProductBuilder/Index.vue'),
             }, {
                 name: 'ProductBuilderUpdate',
-                path: 'update/:id',
+                path: 'update',
                 component: () =>
                     import ('../components/ProductBuilder/Update.vue'),
             },
@@ -24,12 +24,6 @@ const routes = [{
                 path: 'create',
                 component: () =>
                     import ('../components/ProductBuilder/Create.vue'),
-            },
-            {
-                name: 'Test',
-                path: 'test',
-                component: () =>
-                    import ('../components/ProductBuilder/Test.vue'),
             }
         ]
 
