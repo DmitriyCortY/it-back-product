@@ -105,7 +105,6 @@ export default {
             }
         },
         async pc_create_point({ commit }, payload) {
-            console.log(payload.data)
             try {
                 // создаем объект форм дата
                 let form_data = new FormData();

@@ -10,7 +10,7 @@
     <!--  -->
     <PointConfigurator
       :width="400"
-      :id="_THIS_PRODUCT_ID_"
+      :id="id"
       :urlFrontImage="productData[0].image_front"
       :urlBackImage="productData[0].image_back"
       :related="'product'"
@@ -27,7 +27,10 @@ export default {
     UpdateForm
   },
   data() {
-    return {};
+    return {
+      // eslint-disable-next-line no-undef
+      id: _THIS_PRODUCT_ID_
+    };
   },
   destroyed() {
     this.$store.dispatch("prb_clear_all_data");
@@ -35,8 +38,7 @@ export default {
   created() {
     this.$store.dispatch(
       "prb_load_product_data_by_id",
-      // eslint-disable-next-line no-undef
-      parseInt(_THIS_PRODUCT_ID_)
+      parseInt(this.id)
     );
   },
   methods: {

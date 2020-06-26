@@ -343,6 +343,7 @@ export default {
       } else if (this.related === "product") {
         point.productId = this.id;
       }
+      console.log(point)
       this.$store.dispatch("pc_create_point", {related: this.related, data: point});
     },
     // // Обновляет данные точки
