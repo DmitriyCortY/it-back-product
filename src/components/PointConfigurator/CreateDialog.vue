@@ -10,7 +10,7 @@
           </v-col>
           <!--  -->
           <v-col cols="6" align="right">
-            <big>X: {{currentMousePos.x}} | Y: {{currentMousePos.y}}</big>
+            <big>X: {{parseInt(currentMousePos.x * parseFloat(radio.front))}} | Y: {{parseInt(currentMousePos.y * parseFloat(radio.front))}}</big>
           </v-col>
           <!--  -->
           <v-col cols="12">
@@ -104,7 +104,8 @@ export default {
     "relatedFrontPoint",
     "currentSide",
     "currentMousePos",
-    "all_classes"
+    "all_classes",
+    "radio"
   ],
 
   validations: {

@@ -130,6 +130,7 @@
         <thead>
           <tr>
             <th># Point</th>
+            <th>Name</th>
             <th>Class</th>
             <th>Type</th>
             <th>Action</th>
@@ -142,7 +143,9 @@
             @mouseover="focusPoint(item.id)"
             @mouseleave="unFocusPoint(item.id)"
           >
-            <td>{{index}} | {{item.index}}</td>
+            <td>{{index}}</td>
+            
+            <td>{{item.name}}</td>
             <td>{{class_name(item.class)}}</td>
             <td>{{item.type}}</td>
             <td>
@@ -165,6 +168,7 @@
       :relatedFrontPoint="listPointsFront"
       :currentSide="currentSide"
       :currentMousePos="currentMousePos"
+      :radio="radio"
       :all_classes="all_classes"
       @cancelDialog="onCancelDialog"
       @saveNewDialog="onSaveNewDialog"
@@ -176,6 +180,7 @@
       :dialogOpps="dialogOpps"
       :relatedFrontPoint="listPointsFront"
       :currentSide="currentSide"
+      :radio="radio"
       :all_classes="all_classes"
       @cancelDialog="onCancelDialog"
       @update_point="onupdate_point"
@@ -343,7 +348,6 @@ export default {
       } else if (this.related === "product") {
         point.productId = this.id;
       }
-      console.log(point)
       this.$store.dispatch("pc_create_point", {related: this.related, data: point});
     },
     // // Обновляет данные точки

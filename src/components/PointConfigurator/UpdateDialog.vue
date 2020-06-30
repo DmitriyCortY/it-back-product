@@ -10,7 +10,7 @@
           </v-col>
 
           <v-col cols="6" align="right">
-            <big>X: {{pos.x}} | Y: {{pos.y}}</big>
+            <big>X: {{parseInt(pos.x * parseFloat(radio.front))}} | Y: {{parseInt(pos.y * parseFloat(radio.front))}}</big>
           </v-col>
 
           <v-col cols="12">
@@ -104,7 +104,8 @@ export default {
     "dialogOpps",
     "relatedFrontPoint",
     "currentSide",
-    "all_classes"
+    "all_classes",
+    "radio"
   ],
 
   validations: {
@@ -150,7 +151,7 @@ export default {
           type: this.selectedType,
           hint: this.hint,
           name: this.name,
-          relatedPoint: this.relatedPoint
+          relatedPoint: (this.relatedPoint ? this.relatedPoint : null)
         };
         this.$emit("update_point", { point: point });
         //

@@ -61,6 +61,7 @@ export default {
                         list.push(new Point(resp_data.data[i]))
                     }
                     commit('pc_load_points_by_id_and_related', list)
+
                 } else if (payload.related === 'part') {
                     let response = await Axios.post(
                         "http://ivan-tactical.conf/parts_points/get.php",
@@ -229,6 +230,7 @@ export default {
                 form_data.append('side', payload.data.side) //
                 form_data.append('type', payload.data.type) //
                 form_data.append('id', parseInt(payload.data.id))
+                form_data.append('related_id', payload.data.relatedPoint ? parseInt(payload.data.relatedPoint) : null)
                     // создаем объект форм дата
 
                 if (payload.related === 'skeleton') {
